@@ -1,4 +1,4 @@
-package org.team6879.game
+package org.team6879.robot
 
 import edu.wpi.first.wpilibj.IterativeRobot
 import edu.wpi.first.wpilibj.command.Scheduler
