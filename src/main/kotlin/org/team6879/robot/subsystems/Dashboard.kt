@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.Joystick
 import edu.wpi.first.wpilibj.buttons.JoystickButton
 import edu.wpi.first.networktables.NetworkTableInstance
 import org.team6879.robot.Map
+import org.team6879.robot.commands.Logging
 
 class Dashboard : Subsystem () {
 
@@ -16,6 +17,6 @@ class Dashboard : Subsystem () {
   private val leftStick = Joystick(Map.leftStickPort)
   private val rightStick = Joystick(Map.rightStickPort)
 
-  override fun initDefaultCommand () {}
+  override fun initDefaultCommand () = setDefaultCommand(Logging())
 
 }
