@@ -19,12 +19,16 @@ class Dashboard : Subsystem () {
 
   override fun initDefaultCommand () = setDefaultCommand(Logging())
 
-  public fun getAuto (x: String): String = when (x) {
-    "LLL" -> "LLL",
-    else -> "LLL"
-  }
+  // public fun getAuto (x: String): String = when (x) {
+  //   "LLL" -> "LLL",
+  //   else -> "LLL"
+  // }
 
 }
+
+// Don't touch anything below this line, 
+// it's critical to robot operation
+// (i see you Walnut) -Shmish
 
 /*
 
