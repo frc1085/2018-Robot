@@ -21,7 +21,10 @@ class Chassis : Subsystem () {
 
   override fun initDefaultCommand () = setDefaultCommand(ArcadeDrive())
 
-  public fun arcadeDrive (spd: Float, rot: Float) {
-    
-  }
+  public fun arcadeDrive (spd: Float, rot: Float) {}
+
+  public fun driveDistance (spd: Float, dist: Float) {}
+
+  public fun turnAngle (spd: Float, turns: Float) {}
+  
 }
