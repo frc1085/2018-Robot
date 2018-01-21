@@ -26,5 +26,7 @@ class Chassis : Subsystem () {
   public fun driveDistance (spd: Float, dist: Float) {}
 
   public fun turnAngle (spd: Float, turns: Float) {}
-  
+
+  public fun allStop () {}
+
 }
