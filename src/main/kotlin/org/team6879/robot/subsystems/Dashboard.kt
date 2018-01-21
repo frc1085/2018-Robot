@@ -19,16 +19,9 @@ class Dashboard : Subsystem () {
 
   override fun initDefaultCommand () = setDefaultCommand(Logging())
 
-  public fun getAuto (x: String) = when (x) {
-    "LLL" -> null,
-    "LLR" -> null,
-    "LRL" -> null,
-    "LRR" -> null,
-    "RLL" -> null,
-    "RLR" -> null,
-    "RRL" -> null,
-    "RRR" -> null,
-    else -> null
+  public fun getAuto (x: String): String = when (x) {
+    "LLL" -> "LLL",
+    else -> "LLL"
   }
 
 }
