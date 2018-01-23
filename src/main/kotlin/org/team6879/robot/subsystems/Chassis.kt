@@ -21,12 +21,46 @@ class Chassis : Subsystem () {
 
   override fun initDefaultCommand () = setDefaultCommand(ArcadeDrive())
 
-  public fun arcadeDrive (spd: Float, rot: Float) {}
+  // Drive Methods
+  public fun setSpeed (speed: Double) {
+    rightCimFront.set(speed)
+    rightCimBack.set(speed)
+    rightCimMini.set(speed)
 
-  public fun driveDistance (spd: Float, dist: Float) {}
+    leftCimFront.set(-speed)
+    leftCimBack.set(-speed)
+    leftCimMini.set(-speed)
+  }
 
-  public fun turnAngle (spd: Float, turns: Float) {}
+  public fun setRightSpeed (speed: Double) {
+    rightCimFront.set(speed)
+    rightCimBack.set(speed)
+    rightCimMini.set(speed)
+  }
 
-  public fun allStop () {}
+  public fun setLeftSpeed (speed: Double) {
+    leftCimFront.set(speed)
+    leftCimBack.set(speed)
+    leftCimMini.set(speed)
+  }
+
+  public fun allStop () {
+    rightCimFront.stopMotor()
+    rightCimBack.stopMotor()
+    rightCimMini.stopMotor()
+
+    leftCimFront.stopMotor()
+    leftCimBack.stopMotor()
+    leftCimMini.stopMotor()
+  }
+
+  // Encoder Methods
+  public fun resetEncoders () {
+    rightEncoder.reset()
+    leftEncoder.reset()
+  }
+
+  public fun getRightEncoder (): Int = rightEncoder.get()
+  public fun getLeftEncoder (): Int = leftEncoder.get()
 
 }
