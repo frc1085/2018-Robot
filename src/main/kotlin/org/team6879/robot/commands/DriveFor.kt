@@ -13,6 +13,7 @@ class DriveFor (dist: Double) : PIDCommand (4.0, 20.0, 5.0) {
   override fun returnPIDInput () = Robot.chassis.getRightEncoder()
   override fun usePIDOutput (value: Double) = Robot.chassis.setSpeed(value)
 
+  override fun initialize () = Robot.chassis.resetEncoders()
   override fun isFinished () = false
 
 }
