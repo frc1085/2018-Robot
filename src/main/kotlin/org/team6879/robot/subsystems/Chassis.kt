@@ -60,7 +60,7 @@ class Chassis : Subsystem () {
     leftEncoder.reset()
   }
 
-  public fun getRightEncoder (): Int = rightEncoder.get()
-  public fun getLeftEncoder (): Int = leftEncoder.get()
+  public fun getRightEncoder () = rightEncoder.get().toDouble()
+  public fun getLeftEncoder () = leftEncoder.get().toDouble()
 
 }
