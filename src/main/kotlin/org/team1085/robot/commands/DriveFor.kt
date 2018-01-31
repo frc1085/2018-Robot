@@ -1,7 +1,7 @@
-package org.team6879.robot.commands
+package org.team1085.robot.commands
 
 import edu.wpi.first.wpilibj.command.PIDCommand
-import org.team6879.robot.Robot
+import org.team1085.robot.Robot
 
 class DriveFor (dist: Double) : PIDCommand (4.0, 20.0, 5.0) {
 

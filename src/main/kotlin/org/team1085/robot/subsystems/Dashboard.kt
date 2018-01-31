@@ -1,12 +1,12 @@
-package org.team6879.robot.subsystems
+package org.team1085.robot.subsystems
 
 import edu.wpi.first.wpilibj.command.Subsystem
 import edu.wpi.first.wpilibj.Joystick
 import edu.wpi.first.wpilibj.buttons.JoystickButton
 import edu.wpi.first.networktables.NetworkTableInstance
 import edu.wpi.first.wpilibj.DriverStation
-import org.team6879.robot.Map
-import org.team6879.robot.commands.Logging
+import org.team1085.robot.Map
+import org.team1085.robot.commands.Logging
 
 class Dashboard : Subsystem () {
 

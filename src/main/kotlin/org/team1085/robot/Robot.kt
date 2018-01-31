@@ -1,9 +1,9 @@
-package org.team6879.robot
+package org.team1085.robot
 
 import edu.wpi.first.wpilibj.IterativeRobot
 import edu.wpi.first.wpilibj.command.Scheduler
-import org.team6879.robot.subsystems.Chassis
-import org.team6879.robot.subsystems.Dashboard
+import org.team1085.robot.subsystems.Chassis
+import org.team1085.robot.subsystems.Dashboard
 
 class Robot : IterativeRobot () {
 

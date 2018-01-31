@@ -1,10 +1,10 @@
-package org.team6879.robot.subsystems
+package org.team1085.robot.subsystems
 
 import edu.wpi.first.wpilibj.command.Subsystem
 import edu.wpi.first.wpilibj.Spark
 import edu.wpi.first.wpilibj.Encoder
-import org.team6879.robot.Map
-import org.team6879.robot.commands.ArcadeDrive
+import org.team1085.robot.Map
+import org.team1085.robot.commands.ArcadeDrive
 
 class Chassis : Subsystem () {
 

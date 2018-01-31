@@ -4,7 +4,7 @@ plugins {
 }
 
 // Set team number and robot name here
-def TEAM = 6879
+def TEAM = 1085
 def NAME = "robot"
 
 deploy {
