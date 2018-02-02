@@ -1,26 +1,30 @@
 package org.team1085.robot.commands;
 
-import edu.wpi.first.wpilibj.command.PIDCommand;
 import org.team1085.robot.Robot;
 
-class DriveFor extends PIDCommand {
+import edu.wpi.first.wpilibj.command.PIDCommand;
 
-  private double dist;
+public class DriveFor extends PIDCommand {
 
-  public DriveFor(double dist) {
-      this.dist = dist;
-      super(4.0, 20.0, 5.0);
-  }
+	public DriveFor(double dist) {
+		super(4.0, 20.0, 5.0);
+		requires(Robot.chassis);
+		setSetpoint(dist);
+	}
 
-  public void init () {
-    requires(Robot.chassis);
-    setSetpoint(dist);
-  }
+	public void initialize() {
+		Robot.chassis.resetEncoders();
+	}
 
-  public Encoder returnPIDInput () { Robot.chassis.getRightEncoder(); }
-  public void usePIDOutput(Double value) { Robot.chassis.setSpeed(value); }
+	protected double returnPIDInput() {
+		return Robot.chassis.getRightEncoder();
+	}
 
-  public void initialize (){ Robot.chassis.resetEncoders(); }
-  public boolean isFinished (){ return false; }
+	protected void usePIDOutput(double value) {
+		Robot.chassis.setSpeed(value);
+	}
 
+	protected boolean isFinished() {
+		return false;
+	}
 }

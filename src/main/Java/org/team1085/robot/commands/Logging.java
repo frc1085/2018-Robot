@@ -1,15 +1,19 @@
 package org.team1085.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
 import org.team1085.robot.Robot;
+
+import edu.wpi.first.wpilibj.command.Command;
 
 public class Logging extends Command {
 
-  public void init() { requires(Robot.dashboard); }
+	public Logging() {
+		requires(Robot.dashboard);
+	}
 
-  public boolean isFinished () { return false; }
-  public void execute () {
-    
-  }
+	protected boolean isFinished() {
+		return false;
+	}
+
+	public void execute() {}
 
 }

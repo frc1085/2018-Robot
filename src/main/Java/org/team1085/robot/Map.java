@@ -1,25 +1,25 @@
 package org.team1085.robot;
 
 public class Map {
-    
-    // PWM Channels
-    public int rightCimFront = 0;
-    public int rightCimBack = 1;
-    public int rightCimMini = 2;
 
-    public int leftCimFront = 3;
-    public int leftCimBack = 4;
-    public int leftCimMini = 5;
+	// PWM Channels
+	public static final int RIGHT_CIM_FRONT = 0;
+	public static final int RIGHT_CIM_BACK = 1;
+	public static final int RIGHT_CIM_MINI = 2;
 
-    // DIO Channels
-    public int rightEncoderA = 0;
-    public int rightEncoderB = 1;
+	public static final int LEFT_CIM_FRONT = 3;
+	public static final int LEFT_CIM_BACK = 4;
+	public static final int LEFT_CIM_MINI = 5;
 
-    public int leftEncoderA = 2;
-    public int leftEncoderB = 3;
+	// DIO Channels
+	public static final int RIGHT_ENCODER_A = 0;
+	public static final int RIGHT_ENCODER_B = 1;
 
-    // IO Channels
-    public int leftStickPort = 0;
-    public int rightStickPort = 1;
+	public static final int LEFT_ENCODER_A = 2;
+	public static final int LEFT_ENCODER_B = 3;
+
+	// IO Channels
+	public static final int LEFT_STICK_PORT = 0;
+	public static final int RIGHT_STICK_PORT = 1;
 
 }
