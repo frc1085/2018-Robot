@@ -4,7 +4,9 @@ import org.team1085.robot.Map;
 import org.team1085.robot.commands.ArcadeDrive;
 
 import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Chassis extends Subsystem {
@@ -12,6 +14,9 @@ public class Chassis extends Subsystem {
 	private Spark rightCimFront, rightCimBack, rightCimMini;
 	private Spark leftCimFront, leftCimBack, leftCimMini;
 	private Encoder leftEncoder, rightEncoder;
+
+	private SparkGroup leftSide = new SparkGroup(leftCimFront, leftCimBack, leftCimMini, Map.LEFT_INVERTED);
+	private SparkGroup rightSide = new SparkGroup(leftCimFront, leftCimBack, leftCimMini, Map.RIGHT_INVERTED);
 
 	public Chassis() {
 		rightCimFront = new Spark(Map.RIGHT_CIM_FRONT);
@@ -75,6 +80,14 @@ public class Chassis extends Subsystem {
 
 	public double getLeftEncoder() {
 		return (double) leftEncoder.get();
+	}
+
+	public SparkGroup getLeftSide() {
+		return leftSide;
+	}
+
+	public SparkGroup getRightSide() {
+		return rightSide;
 	}
 
 }
