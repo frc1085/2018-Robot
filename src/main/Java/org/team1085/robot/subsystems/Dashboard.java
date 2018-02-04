@@ -11,29 +11,26 @@ import edu.wpi.first.networktables.NetworkTable;
 
 public class Dashboard extends Subsystem {
 
-	private static DriverStation station = DriverStation.getInstance();
+    private static DriverStation station = DriverStation.getInstance();
 
-	private static NetworkTableInstance globalTable = NetworkTableInstance.create();
-	private static NetworkTable visionTable = globalTable.getTable("vision");
-	private static NetworkTable sensorTable = globalTable.getTable("sensor");
-	private static NetworkTable errorsTable = globalTable.getTable("errors");
+    private static NetworkTableInstance globalTable = NetworkTableInstance.create();
+    private static NetworkTable visionTable = globalTable.getTable("vision");
+    private static NetworkTable sensorTable = globalTable.getTable("sensor");
+    private static NetworkTable errorsTable = globalTable.getTable("errors");
 
-	private static Joystick leftStick = new Joystick(Map.LEFT_STICK_PORT);
-	private static Joystick rightStick = new Joystick(Map.RIGHT_STICK_PORT);
+    public void initDefaultCommand() {
+        setDefaultCommand(new Logging());
+    }
 
-	public void initDefaultCommand() {
-		setDefaultCommand(new Logging());
-	}
-
-	public String selectAuto() {
-		String mes = station.getGameSpecificMessage();
-		switch (mes) {
-		case "LLL":
-			return "lll";
-		case "LLR":
-			return "llr";
-		default:
-			return "other";
-		}
-	}
+    public String selectAuto() {
+        String mes = station.getGameSpecificMessage();
+        switch (mes) {
+            case "LLL":
+                return "lll";
+            case "LLR":
+                return "llr";
+            default:
+                return "other";
+        }
+    }
 }

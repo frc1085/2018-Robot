@@ -6,14 +6,14 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class Logging extends Command {
 
-	public Logging() {
-		requires(Robot.dashboard);
-	}
+    public Logging() {
+        requires(Robot.dashboard);
+    }
 
-	protected boolean isFinished() {
-		return false;
-	}
+    protected boolean isFinished() {
+        return false;
+    }
 
-	public void execute() {}
+    public void execute() {}
 
 }

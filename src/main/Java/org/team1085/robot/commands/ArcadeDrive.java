@@ -8,16 +8,16 @@ import org.team1085.robot.Robot;
 
 public class ArcadeDrive extends Command {
 
-	public ArcadeDrive() {
-		requires(Robot.chassis);
-	}
+    public ArcadeDrive() {
+        requires(Robot.chassis);
+    }
 
-	protected boolean isFinished() {
-		return false;
-	}
+    protected boolean isFinished() {
+        return false;
+    }
 
-	public void execute() {
-		Robot.chassis.getLeftSide().set(OI.controller1.getRawAxis(Map.LEFT_Y_AXIS));
-		Robot.chassis.getRightSide().set(OI.controller1.getRawAxis(Map.RIGHT_Y_AXIS));
-	}
+    public void execute() {
+        Robot.chassis.getLeftSide().set(OI.controller1.getRawAxis(Map.LEFT_Y_AXIS));
+        Robot.chassis.getRightSide().set(OI.controller1.getRawAxis(Map.RIGHT_Y_AXIS));
+    }
 }
