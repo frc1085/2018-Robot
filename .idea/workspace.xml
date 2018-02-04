@@ -477,17 +477,6 @@
           <expand>
             <path>
               <item name="2018-Robot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-Robot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="2018-Robot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-Robot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2018-Robot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-Robot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
           </expand>
