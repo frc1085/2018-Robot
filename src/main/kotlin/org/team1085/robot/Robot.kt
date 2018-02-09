@@ -10,6 +10,7 @@ class Robot : IterativeRobot () {
   companion object {
     public val dashboard = Dashboard()
     public val chassis = Chassis()
+    public val arm = Arm()
   }
 
   override fun robotInit () {}
