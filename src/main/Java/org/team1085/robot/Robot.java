@@ -1,5 +1,7 @@
 package org.team1085.robot;
 
+import edu.wpi.first.wpilibj.command.Command;
+import org.team1085.robot.commands.ArcadeDrive;
 import org.team1085.robot.subsystems.Chassis;
 import org.team1085.robot.subsystems.Dashboard;
 
@@ -8,10 +10,17 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 
 public class Robot extends IterativeRobot {
 
-    public static Dashboard dashboard = new Dashboard();
-    public static Chassis chassis = new Chassis();
+    public static Dashboard dashboard;
+    public static Chassis chassis;
 
-    public void robotInit() {}
+    public static Command arcade;
+
+    public void robotInit() {
+        dashboard = new Dashboard();
+        chassis = new Chassis();
+
+        arcade = new ArcadeDrive();
+    }
 
     public void autonomousInit() {}
 

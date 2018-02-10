@@ -17,6 +17,7 @@ public class Dashboard extends Subsystem {
     private static NetworkTable visionTable = globalTable.getTable("vision");
     private static NetworkTable sensorTable = globalTable.getTable("sensor");
     private static NetworkTable errorsTable = globalTable.getTable("errors");
+    private static NetworkTable debugTable = globalTable.getTable("debug");
 
     public void initDefaultCommand() {
         setDefaultCommand(new Logging());

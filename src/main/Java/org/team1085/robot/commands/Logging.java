@@ -1,5 +1,6 @@
 package org.team1085.robot.commands;
 
+import edu.wpi.first.networktables.NetworkTable;
 import org.team1085.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -14,6 +15,8 @@ public class Logging extends Command {
         return false;
     }
 
-    public void execute() {}
+    public void execute() {
+
+    }
 
 }

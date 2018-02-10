@@ -17,7 +17,7 @@ public class ArcadeDrive extends Command {
     }
 
     public void execute() {
-        Robot.chassis.getLeftSide().set(OI.controller1.getRawAxis(Map.LEFT_Y_AXIS));
-        Robot.chassis.getRightSide().set(OI.controller1.getRawAxis(Map.RIGHT_Y_AXIS));
+        Robot.chassis.setLeftSpeed(OI.controller1.getRawAxis(Map.L_Y_AXIS));
+        Robot.chassis.setRightSpeed(OI.controller1.getRawAxis(Map.R_Y_AXIS));
     }
 }

@@ -1,6 +1,7 @@
 package org.team1085.robot.subsystems;
 
 import org.team1085.robot.Map;
+import org.team1085.robot.Robot;
 import org.team1085.robot.commands.ArcadeDrive;
 
 import edu.wpi.first.wpilibj.Encoder;
@@ -15,57 +16,46 @@ public class Chassis extends Subsystem {
     private Spark leftCimFront, leftCimBack, leftCimMini;
     private Encoder leftEncoder, rightEncoder;
 
-    private SparkGroup leftSide = new SparkGroup(leftCimFront, leftCimBack, leftCimMini, Map.LEFT_INVERTED);
-    private SparkGroup rightSide = new SparkGroup(leftCimFront, leftCimBack, leftCimMini, Map.RIGHT_INVERTED);
+    private SparkGroup leftSide;
+    private SparkGroup rightSide;
 
     public Chassis() {
+        leftCimFront = new Spark(Map.LEFT_CIM_FRONT);
+        leftCimBack = new Spark(Map.LEFT_CIM_BACK);
+        leftCimMini = new Spark(Map.LEFT_CIM_MINI);
+
         rightCimFront = new Spark(Map.RIGHT_CIM_FRONT);
         rightCimBack = new Spark(Map.RIGHT_CIM_BACK);
         rightCimMini = new Spark(Map.RIGHT_CIM_MINI);
 
-        leftCimFront = new Spark(Map.LEFT_CIM_FRONT);
-        leftCimBack = new Spark(Map.LEFT_CIM_BACK);
-        leftCimMini = new Spark(Map.LEFT_CIM_MINI);
+        leftSide = new SparkGroup(leftCimFront, leftCimBack, leftCimMini, Map.LEFT_INVERTED);
+        rightSide = new SparkGroup(rightCimFront, rightCimBack, rightCimMini, Map.RIGHT_INVERTED);
 
         leftEncoder = new Encoder(Map.LEFT_ENCODER_A, Map.LEFT_ENCODER_B);
         rightEncoder = new Encoder(Map.RIGHT_ENCODER_A, Map.RIGHT_ENCODER_B);
     }
 
     protected void initDefaultCommand() {
-        setDefaultCommand(new ArcadeDrive());
+        setDefaultCommand(Robot.arcade);
     }
 
     // Drive Methods
-    public void setSpeed(Double speed) {
-        rightCimFront.set(speed);
-        rightCimBack.set(speed);
-        rightCimMini.set(speed);
-
-        leftCimFront.set(-speed);
-        leftCimBack.set(-speed);
-        leftCimMini.set(-speed);
-    }
-
     public void setRightSpeed(Double speed) {
-        rightCimFront.set(speed);
-        rightCimBack.set(speed);
-        rightCimMini.set(speed);
+        rightSide.set(speed);
     }
 
     public void setLeftSpeed(Double speed) {
-        leftCimFront.set(speed);
-        leftCimBack.set(speed);
-        leftCimMini.set(speed);
+        leftSide.set(speed);
+    }
+
+    public void setSpeed(Double speed) {
+        setLeftSpeed(speed);
+        setRightSpeed(speed);
     }
 
     public void allStop() {
-        rightCimFront.stopMotor();
-        rightCimBack.stopMotor();
-        rightCimMini.stopMotor();
-
-        leftCimFront.stopMotor();
-        leftCimBack.stopMotor();
-        leftCimMini.stopMotor();
+        leftSide.stopMotor();
+        rightSide.stopMotor();
     }
 
     // Encoder Methods
@@ -80,14 +70,6 @@ public class Chassis extends Subsystem {
 
     public double getLeftEncoder() {
         return (double) leftEncoder.get();
-    }
-
-    public SparkGroup getLeftSide() {
-        return leftSide;
-    }
-
-    public SparkGroup getRightSide() {
-        return rightSide;
     }
 
 }

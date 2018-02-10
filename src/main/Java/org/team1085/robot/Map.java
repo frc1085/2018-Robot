@@ -24,10 +24,22 @@ public class Map {
     // OI
     public static final int CONTROLLER_1_PORT = 0; // Controls chassis and intake
     public static final int CONTROLLER_2_PORT = 1; // Controls arm
-
-    public static final int LEFT_X_AXIS = 0;
-    public static final int LEFT_Y_AXIS = 1;
-    public static final int RIGHT_X_AXIS = 4;
-    public static final int RIGHT_Y_AXIS = 5;
+    // Axis
+    public static final int X_AXIS = 0;
+    public static final int Y_AXIS = 1;
+    // Xbox
+    public static final int L_X_AXIS = 0;
+    public static final int L_Y_AXIS = 1;
+    public static final int R_X_AXIS = 4;
+    public static final int R_Y_AXIS = 5;
+    public static final int L_TRIGGER = 2;
+    public static final int R_TRIGGER = 3;
+    // Buttons
+    // Xbox
+    public static final int LB = 5;
+    public static final int RB = 6;
+    // Joystick
+    public static final int TRIGGER = 1;
+    public static final int LOCK = 2;
 
 }
