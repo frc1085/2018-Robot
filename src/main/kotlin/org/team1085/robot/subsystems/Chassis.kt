@@ -11,7 +11,7 @@ class Chassis : Subsystem () {
   private val rightCimFront = Spark(Map.rightCimFront)
   private val rightCimBack = Spark(Map.rightCimBack)
   private val rightCimMini = Spark(Map.rightCimMini)
-  
+
   private val leftCimFront = Spark(Map.leftCimFront)
   private val leftCimBack = Spark(Map.leftCimBack)
   private val leftCimMini = Spark(Map.leftCimMini)

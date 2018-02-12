@@ -3,7 +3,7 @@ package org.team1085.robot.commands
 import edu.wpi.first.wpilibj.command.PIDCommand
 import org.team1085.robot.Robot
 
-class DriveFor (dist: Double) : PIDCommand (4.0, 20.0, 5.0) {
+class DriveFor (dist: Double) : PIDCommand (4.0, 1.0, 1.0) {
 
   init {
     requires(Robot.chassis)
