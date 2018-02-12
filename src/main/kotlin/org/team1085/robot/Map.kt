@@ -12,6 +12,9 @@ class Map {
     public val leftCimBack = 4
     public val leftCimMini = 5
 
+    public val armSolenoidA = 6
+    public val armSolenoidB = 7
+
     // DIO Channels
     public val rightEncoderA = 0
     public val rightEncoderB = 1
@@ -19,8 +22,13 @@ class Map {
     public val leftEncoderA = 2
     public val leftEncoderB = 3
 
+    public val armEncoder = 4
+
     // IO Channels
     public val leftStickPort = 0
     public val rightStickPort = 1
+
+    // CAN Interface
+        public val armTalon = 0
   }
 }
