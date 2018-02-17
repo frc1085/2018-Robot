@@ -10,12 +10,12 @@ class Robot : IterativeRobot () {
   companion object {
     public val dashboard = Dashboard()
     public val chassis = Chassis()
-    public val arm = Arm()
+    //public val arm = Arm()
   }
 
   override fun robotInit () {}
-  override fun autonomousInit () {}
-  override fun teleopInit () {}
+  override fun autonomousInit () = dashboard.getAuto().start()
+  override fun teleopInit () = Scheduler.getInstance().removeAll()
 
   override fun autonomousPeriodic () = Scheduler.getInstance().run()
   override fun teleopPeriodic () = Scheduler.getInstance().run()

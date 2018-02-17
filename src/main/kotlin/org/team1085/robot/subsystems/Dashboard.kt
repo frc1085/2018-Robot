@@ -1,6 +1,7 @@
 package org.team1085.robot.subsystems
 
 import edu.wpi.first.wpilibj.command.Subsystem
+import edu.wpi.first.wpilibj.command.Command
 import edu.wpi.first.wpilibj.Joystick
 import edu.wpi.first.wpilibj.buttons.JoystickButton
 import edu.wpi.first.networktables.NetworkTableInstance
@@ -17,15 +18,15 @@ class Dashboard : Subsystem () {
   private val sensorTable = globalTable.getTable("sensor")
   private val errorsTable = globalTable.getTable("errors")
 
-  private val leftStick = Joystick(Map.leftStickPort)
-  private val rightStick = Joystick(Map.rightStickPort)
+  public val leftStick = Joystick(Map.leftStickPort)
+  //private val rightStick = Joystick(Map.rightStickPort)
 
   override fun initDefaultCommand () = setDefaultCommand(Logging())
 
-  public fun selectAuto (): String = when (station.getGameSpecificMessage()) {
-    "LLL" -> "lll"
-    "LLR" -> "llr"
-    else -> "other"
+  public fun getAuto (): Command = when (station.getGameSpecificMessage()) {
+    "LLL" -> object : Command () { override fun isFinished () = false }
+    "LLR" -> object : Command () { override fun isFinished () = false }
+    else -> object : Command () { override fun isFinished () = false }
   }
 
 }

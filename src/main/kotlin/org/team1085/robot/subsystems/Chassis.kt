@@ -39,9 +39,9 @@ class Chassis : Subsystem () {
   }
 
   public fun setLeftSpeed (speed: Double) {
-    leftCimFront.set(speed)
-    leftCimBack.set(speed)
-    leftCimMini.set(speed)
+    leftCimFront.set(-speed)
+    leftCimBack.set(-speed)
+    leftCimMini.set(-speed)
   }
 
   public fun allStop () {
