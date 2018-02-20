@@ -3,6 +3,7 @@ package org.team1085.robot.subsystems
 import edu.wpi.first.wpilibj.command.Subsystem
 import edu.wpi.first.wpilibj.command.Command
 import edu.wpi.first.wpilibj.Joystick
+import edu.wpi.first.wpilibj.XboxController
 import edu.wpi.first.wpilibj.buttons.JoystickButton
 import edu.wpi.first.networktables.NetworkTableInstance
 import edu.wpi.first.wpilibj.DriverStation
@@ -19,7 +20,7 @@ class Dashboard : Subsystem () {
   private val errorsTable = globalTable.getTable("errors")
 
   public val leftStick = Joystick(Map.leftStickPort)
-  //private val rightStick = Joystick(Map.rightStickPort)
+  public val rightStick = XboxController(Map.rightStickPort)
 
   override fun initDefaultCommand () = setDefaultCommand(Logging())
 

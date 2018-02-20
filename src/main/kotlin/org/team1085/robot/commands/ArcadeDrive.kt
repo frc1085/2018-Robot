@@ -9,8 +9,8 @@ class ArcadeDrive : Command () {
 
   override fun isFinished () = false
   override fun execute () {
-    val x = Robot.dashboard.leftStick.getX() as Double
-    val y = Robot.dashboard.leftStick.getY() as Double
+    val x = Robot.dashboard.leftStick.getX()
+    val y = Robot.dashboard.leftStick.getY()
 
     Robot.chassis.setLeftSpeed(Math.pow(y - x, 3.0))
     Robot.chassis.setRightSpeed(Math.pow(y + x, 3.0))

@@ -28,6 +28,7 @@ dependencies {
   compile wpilib()
   compile ctre()
   compile navx()
+  compile pathfinder()
   compile "org.jetbrains.kotlin:kotlin-stdlib"
 }
 

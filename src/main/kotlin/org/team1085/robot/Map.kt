@@ -29,6 +29,6 @@ class Map {
     public val rightStickPort = 1
 
     // CAN Interface
-    public val armTalon = 0
+    public val armTalon = 1
   }
 }

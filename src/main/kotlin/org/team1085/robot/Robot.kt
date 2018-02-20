@@ -4,13 +4,14 @@ import edu.wpi.first.wpilibj.IterativeRobot
 import edu.wpi.first.wpilibj.command.Scheduler
 import org.team1085.robot.subsystems.Chassis
 import org.team1085.robot.subsystems.Dashboard
+import org.team1085.robot.subsystems.Arm
 
 class Robot : IterativeRobot () {
 
   companion object {
     public val dashboard = Dashboard()
     public val chassis = Chassis()
-    //public val arm = Arm()
+    public val arm = Arm()
   }
 
   override fun robotInit () {}
