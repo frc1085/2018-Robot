@@ -20,7 +20,8 @@ class PathFollower (vararg coords: Triple<Double, Double, Double>) : Command () 
 
   override fun isFinished () = leftFollower.isFinished() && rightFollower.isFinished()
 
-  override fun initilize () {
+  override fun initialize () {
+    requires(Robot.chassis)
     Robot.chassis.resetEncoders()
     leftFollower.configureEncoder(0, 512, 0.1524)
     rightFollower.configureEncoder(0, 512, 0.1524)
