@@ -29,7 +29,11 @@ class PathFollower (vararg coords: Triple<Double, Double, Double>) : Command () 
   }
 
   override fun execute () {
+    val leftSpeed = leftFollower.calculate(Robot.chassis.getLeftEncoder())
+    val rightSpeed = rightFollower.calculate(Robot.chassis.getRightEncoder())
 
+    Robot.chassis.setLeftSpeed(leftSpeed)
+    Robot.chassis.setRightSpeed(rightSpeed)
   }
 
 }
