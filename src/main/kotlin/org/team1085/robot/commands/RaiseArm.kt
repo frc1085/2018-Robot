@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.command.Command
 import edu.wpi.first.wpilibj.GenericHID.Hand
 import org.team1085.robot.Robot
 
-class Lift : Command () {
+class RaiseArm : Command () {
 
   init { requires(Robot.arm) }
 

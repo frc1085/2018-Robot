@@ -9,9 +9,9 @@ import org.team1085.robot.subsystems.Arm
 class Robot : IterativeRobot () {
 
   companion object {
-    public val dashboard = Dashboard()
     public val chassis = Chassis()
     public val arm = Arm()
+    public val dashboard = Dashboard()
   }
 
   override fun robotInit () {}

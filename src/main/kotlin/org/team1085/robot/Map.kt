@@ -22,13 +22,19 @@ class Map {
     public val leftEncoderA = 2
     public val leftEncoderB = 3
 
-    public val armEncoder = 4
-
-    // IO Channels
+    // OI Channels
     public val leftStickPort = 0
     public val rightStickPort = 1
 
+    // OI Buttons
+    public val secondA = 1
+    public val secondB = 2
+    public val secondX = 3
+    public val secondY = 4
+
     // CAN Interface
-    public val armTalon = 1
+    public val armTalon = 2
+    public val winchTalon = 1
+
   }
 }

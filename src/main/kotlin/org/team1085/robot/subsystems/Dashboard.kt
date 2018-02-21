@@ -9,6 +9,9 @@ import edu.wpi.first.networktables.NetworkTableInstance
 import edu.wpi.first.wpilibj.DriverStation
 import org.team1085.robot.Map
 import org.team1085.robot.commands.Logging
+import org.team1085.robot.commands.Grip
+import org.team1085.robot.commands.Open
+import org.team1085.robot.commands.Close
 
 class Dashboard : Subsystem () {
 
@@ -21,6 +24,10 @@ class Dashboard : Subsystem () {
 
   public val leftStick = Joystick(Map.leftStickPort)
   public val rightStick = XboxController(Map.rightStickPort)
+
+  public val gripButton = JoystickButton(leftStick, 1).whenPressed(Grip())
+  public val openClaw = JoystickButton(leftStick, 11).whenPressed(Open())
+  public val closeClaw = JoystickButton(leftStick, 12).whenPressed(Close())
 
   override fun initDefaultCommand () = setDefaultCommand(Logging())
 
