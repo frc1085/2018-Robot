@@ -36,5 +36,9 @@ class Map {
     public val armTalon = 2
     public val winchTalon = 1
 
+    // PCM Channels
+    public val clawOpen = 0
+    public val clawClose = 1
+
   }
 }

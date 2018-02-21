@@ -11,9 +11,9 @@ import org.team1085.robot.commands.RaiseArm
 class Arm : Subsystem () {
 
   private val controller = TalonSRX(2)
-  private val solenoid = DoubleSolenoid(0, 1)
+  private val solenoid = DoubleSolenoid(Map.clawOpen, Map.clawClose)
 
-  override fun initDefaultCommand () = setDefaultCommand(RaiseLift())
+  override fun initDefaultCommand () = setDefaultCommand(RaiseArm())
   public fun setSpeed (spd: Double) = controller.set(ControlMode.PercentOutput, spd)
   public fun closeClaw () = solenoid.set(DoubleSolenoid.Value.kReverse)
   public fun openClaw () = solenoid.set(DoubleSolenoid.Value.kForward)
