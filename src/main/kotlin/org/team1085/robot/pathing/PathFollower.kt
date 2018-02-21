@@ -10,6 +10,8 @@ import org.team1085.robot.Robot
 
 class PathFollower (vararg coords: Triple<Double, Double, Double>) : Command () {
 
+  init { requires(Robot.chassis) }
+
   private val config = Trajectory.Config(Trajectory.FitMethod.HERMITE_CUBIC, Trajectory.Config.SAMPLES_HIGH, 0.05, 1.7, 2.0, 60.0)
   private val points = coords.map { coord -> Waypoint(coord.first, coord.second, coord.third) }.toTypedArray()
   private val center = Pathfinder.generate(points, config)
@@ -21,7 +23,6 @@ class PathFollower (vararg coords: Triple<Double, Double, Double>) : Command () 
   override fun isFinished () = leftFollower.isFinished() && rightFollower.isFinished()
 
   override fun initialize () {
-    requires(Robot.chassis)
     Robot.chassis.resetEncoders()
     leftFollower.configureEncoder(0, 512, 0.1524)
     rightFollower.configureEncoder(0, 512, 0.1524)
