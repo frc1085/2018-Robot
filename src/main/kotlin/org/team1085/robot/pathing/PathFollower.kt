@@ -4,8 +4,9 @@ import edu.wpi.first.wpilibj.command.Command
 import jaci.pathfinder.Pathfinder
 import jaci.pathfinder.Trajectory
 import jaci.pathfinder.Waypoint
-import jaci.pathfinder.modifiers.TankModifier;
+import jaci.pathfinder.modifiers.TankModifier
 import jaci.pathfinder.followers.EncoderFollower
+import org.team1085.robot.Robot
 
 class PathFollower (vararg coords: Triple<Double, Double, Double>) : Command () {
 
@@ -19,8 +20,14 @@ class PathFollower (vararg coords: Triple<Double, Double, Double>) : Command () 
 
   override fun isFinished () = leftFollower.isFinished() && rightFollower.isFinished()
 
+  override fun initilize () {
+    Robot.chassis.resetEncoders()
+    leftFollower.configureEncoder(0, 512, 0.1524)
+    rightFollower.configureEncoder(0, 512, 0.1524)
+  }
+
   override fun execute () {
-    
+
   }
 
 }
