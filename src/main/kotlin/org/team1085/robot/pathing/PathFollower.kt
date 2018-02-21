@@ -14,8 +14,13 @@ class PathFollower (vararg coords: Triple<Double, Double, Double>) : Command () 
   private val center = Pathfinder.generate(points, config)
   private val modify = TankModifier(center).modify(0.635)
 
-  private val left = modify.getLeftTrajectory()
-  private val right = modify.getRightTrajectory()
+  private val leftFollower = EncoderFollower(modify.getLeftTrajectory())
+  private val rightFollower = EncoderFollower(modify.getRightTrajectory())
 
-  override fun isFinished () = false
+  override fun isFinished () = leftFollower.isFinished() && rightFollower.isFinished()
+
+  override fun execute () {
+    
+  }
+
 }
