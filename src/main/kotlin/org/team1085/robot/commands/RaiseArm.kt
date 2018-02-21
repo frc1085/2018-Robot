@@ -11,7 +11,6 @@ class RaiseArm : Command () {
   override fun isFinished () = false
   override fun execute () {
     val y = Robot.dashboard.rightStick.getY(Hand.kLeft)
-    
     Robot.arm.setSpeed(y)
   }
 }
