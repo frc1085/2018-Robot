@@ -36,4 +36,8 @@ class PathFollower (vararg coords: Triple<Double, Double, Double>) : Command () 
     Robot.chassis.setRightSpeed(rightSpeed)
   }
 
-}
+  companion object {
+    fun fromCoords (vararg coords: Triple<Double, Double, Double>) = PathFollower(*coords)
+  }
+
+} 
