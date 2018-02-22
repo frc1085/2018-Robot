@@ -8,7 +8,7 @@ import jaci.pathfinder.modifiers.TankModifier
 import jaci.pathfinder.followers.EncoderFollower
 import org.team1085.robot.Robot
 
-class PathFollower (vararg coords: Triple<Double, Double, Double>) : Command () {
+open class PathFollower (vararg coords: Triple<Double, Double, Double>) : Command () {
 
   init { requires(Robot.chassis) }
 
@@ -34,10 +34,6 @@ class PathFollower (vararg coords: Triple<Double, Double, Double>) : Command () 
 
     Robot.chassis.setLeftSpeed(leftSpeed)
     Robot.chassis.setRightSpeed(rightSpeed)
-  }
-
-  companion object {
-    fun fromCoords (vararg coords: Triple<Double, Double, Double>) = PathFollower(*coords)
   }
 
 } 
