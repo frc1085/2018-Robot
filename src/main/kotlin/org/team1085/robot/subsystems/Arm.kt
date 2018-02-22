@@ -10,7 +10,7 @@ import org.team1085.robot.commands.RaiseArm
 
 class Arm : Subsystem () {
 
-  private val controller = TalonSRX(2)
+  private val controller = TalonSRX(Map.armTalon)
   private val solenoid = DoubleSolenoid(Map.clawOpen, Map.clawClose)
 
   override fun initDefaultCommand () = setDefaultCommand(RaiseArm())
